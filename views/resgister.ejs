@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <title>kalyug</title>
+
+</head>
+<body class="bg-dark" style="background-image: url('bg.jpg');    background-repeat: no-repeat;
+background-attachment: fixed;">
+    <div class="container justify-content-center mt-2 border rounded bg-light" >
+        <div class="text-center" >
+            <img src="logo.png" alt="" width="300rem">
+            <div>
+                <img src="gymlogo.png" alt="" width="150rem">
+                <p class="" > <span class="badge bg-secondary">
+                    Venue Partner
+                </span> </p>
+
+            </div>
+             
+                
+                <h5 class="mt-1 text-dark "> K.H. No. 29/3/3, Beside Rajora Farm House, Khajuri Kalan Road - 462022 </h5> <a href="https://maps.app.goo.gl/2HyNcPAKtTivGbsw8" class="btn btn-primary" role="button">Get Location</a>
+
+
+        </div>
+
+        <div class="m-3">
+            <div class="text-left m-1  p-4 bg-light rounded ">
+                <label class="form-label mt-2" for="">Stage Name </label>
+                <input class="form-control" name="Name" id="Name" type="text" placeholder="Sachin" required>
+
+               
+                  
+
+            
+
+                <div class="rounded border p-2 shadow my-2" >
+                    <label class="form-label " for="">Category </label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="c1" onclick="c1()" required>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Popping
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="c2"  onclick="c2()" required>
+                        <label class="form-check-label" for="flexCheckDefault">
+                         Breaking
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="c3"  onclick="c3()" required>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Krump
+                        </label>
+                    </div>
+                    <div class="form-check mb-2" >
+                        <input class="form-check-input" type="checkbox" value="" id="c4"  onclick="c4()" required>
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Rep your style
+                        </label>
+                    </div> 
+
+                </div>
+                <label for="form-label"> Gender </label>
+                <select class="form-select" aria-label="Default select example">
+                    
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Others</option>
+                  </select>
+                  
+
+                  
+
+                 <label class="form-label" for="">Age </label>
+                 <input class="form-control " name="Gmail" id="Gmail" type="number" placeholder="69" required>
+                 
+                 <label class="form-label" for="">City </label>
+                 <input class="form-control " name="Gmail" id="Gmail" type="text" placeholder="Bhopal" required>
+                 
+                 <label class="form-label" for="">Contact Number </label>
+                 <input class="form-control " name="Gmail" id="Gmail" type="tel" placeholder="69" required>
+
+
+                 <label class="form-label" for="">Email </label>
+                 <input class="form-control " name="Gmail" id="Gmail" type="email" placeholder="sachin@gmail.com" required>
+                 
+                 
+
+                 <div class="bg-dark p-2 mt-2 rounded" >
+                    <h5 class="mt-1 text-danger "> No entries without mail conformation and slot number </h5>
+
+                 </div>
+                 <button class="btn btn-primary mt-2" type="submit" > Pay now </button>
+           
+
+                 </form>
+               
+             </div>
+            
+        </div>
+      
+    </div>
+
+    <script>
+        var v1 = false, v2 = false , v3 = false , v4 = false
+     
+   function c1() {
+    var c1 =  document.getElementById("c1");  
+    if (c1.checked) {
+            v1 = true
+            console.log("c1" + v1);
+            check()
+        }
+        if (!c1.checked) {
+           
+            console.log("unchecked");
+            uncheck()
+            v1 = false
+        }
+   }
+   function c2() {
+    var c2 =  document.getElementById("c2");  
+    if (c2.checked) {
+            v2 = true
+            console.log("c2" + v2);
+            check()
+        }
+        if (!c2.checked) {
+            
+            console.log("unchecked");
+            uncheck()
+            v2 = false
+        }
+   }
+   function c3() {
+    var c3 =  document.getElementById("c3");  
+    if (c3.checked) {
+            v3 = true
+            console.log("checked");
+            check()
+        }
+        if (!c3.checked) {
+           
+            console.log("unchecked");
+            uncheck()
+            v3 = false
+        }
+   }
+   function c4() {
+    var c4 =  document.getElementById("c4");  
+    if (c4.checked) {
+            v4 = true
+            console.log("checked");
+            check()
+        }
+        if (!c4.checked) {
+            
+            console.log("unchecked");
+            uncheck()
+            v4 = false
+
+        }
+   }
+ 
+   function uncheck(params) {
+    if (v1 && v2  ) {
+    console.log("uncheck");
+    console.log(document.getElementById("c3").disabled);
+    document.getElementById("c3").disabled = false;
+    document.getElementById("c4").disabled = false;
+
+   }   
+   else if(v1 && v3) {
+    document.getElementById("c2").disabled = false;
+    document.getElementById("c4").disabled = false;
+   } 
+   else if(v1 && v4) {
+
+    document.getElementById("c3").disabled = false;
+    document.getElementById("c2").disabled = false;
+    } 
+    else if(v2 && v3) {
+    document.getElementById("c1").disabled = false;
+    document.getElementById("c4").disabled = false;
+   } 
+   else if(v2 && v4) {
+    document.getElementById("c3").disabled = false;
+    document.getElementById("c1").disabled = false;
+   }
+   else if(v3 && v4) {
+    document.getElementById("c1").disabled = false;
+    document.getElementById("c2").disabled = false;
+   }
+   else {
+    
+   }
+   }
+
+
+   function check(params) {
+    if (v1 && v2  ) {
+    console.log("dis");
+    document.getElementById("c3").disabled = true;
+    document.getElementById("c4").disabled = true;
+
+   }   
+   else if(v1 && v3) {
+    document.getElementById("c2").disabled = true;
+    document.getElementById("c4").disabled = true;
+   } 
+   else if(v1 && v4) {
+    document.getElementById("c3").disabled = true;
+    document.getElementById("c2").disabled = true;
+    } 
+    else if(v2 && v3) {
+    document.getElementById("c1").disabled = true;
+    document.getElementById("c4").disabled = true;
+    } 
+    else if(v2 && v4) {
+    document.getElementById("c3").disabled = true;
+    document.getElementById("c1").disabled = true;
+    } 
+    else if(v3 && v4) {
+    document.getElementById("c2").disabled = true;
+    document.getElementById("c1").disabled = true;
+    } 
+
+
+   else {
+    
+   }
+   }
+
+
+
+
+
+
+  
+    </script>
+
+</body>
+</html>
