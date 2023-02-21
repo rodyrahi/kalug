@@ -48,11 +48,13 @@
       <div class="m-3">
         <div class="text-left m-1 p-4 bg-light rounded">
           <form action="/"  method="post">
+          
             <label class="form-label mt-2" for="">Stage Name </label>
             <input class="form-control" name="name" id="name" type="text" placeholder="Name" required />
 
             <div class="rounded border p-2 shadow my-3">
               <label class="form-label" for="">Category </label>
+              <div class="" id="check" >
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value=" Popping" id="c1" name="c4" onclick="" />
                 <label class="form-check-label" for="flexCheckDefault">
@@ -78,8 +80,13 @@
                   Rep your style
                 </label>
               </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="Audiance" onchange="aud()" id="c5" name="c4" onclick="" />
+
+
+            <div>
+            </div>
+              </div>
+              <div class="form-check mb-2" id="aud">
+                <input class="form-check-input" type="checkbox" value="Audiance" onchange="change()"  id="c5" name="c4" onclick="" />
                 <label class="form-check-label" for="flexCheckDefault">
                   Audiance
                 </label>
@@ -127,11 +134,16 @@
 
 
       checkboxes.forEach((checkbox) => {
+
+
         checkbox.addEventListener("change", () => {
           const checkedCount = document.querySelectorAll(
             'input[type="checkbox"]:checked'
           ).length;
-         
+          
+          if (checkbox.id != 'c5') {
+            document.getElementById("aud").classList.add('d-none')
+          }
             
           if (checkedCount > 2) {
             checkbox.checked = false;
@@ -145,22 +157,41 @@
               
             }
             
-           
 
           }
-          
-          if (checkedCount > 1) {
-            if (checkbox.id != 'c5') {
-              checkbox.checked = false;
+          if (checkedCount < 1) {
+            try {
+              document.getElementById("pay").classList.add("disabled");
+              document.getElementById("aud").classList.remove('d-none')
+            } catch (error) {
+              
             }
-       
-           
+            
 
           }
+         
+        
+           
+
+          
 
 
         });
       });
+
+      function change() {
+
+        if ( document.getElementById("c5").checked == true) {
+          document.getElementById("check").classList.add('d-none')
+        }
+        if( document.getElementById("c5").checked == false)
+        {
+          document.getElementById("check").classList.remove('d-none')
+        }
+       
+      }
+
+
     </script>
   </body>
 </html>
