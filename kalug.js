@@ -57,7 +57,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
-  to: 'rodyrahi126@gmail.com',
+  to: 'rodyrahi126@gmail.com , rprishavpal1234@gmail.com  ',
   subject: 'Someone registred' ,
   text: 
   `'${data.name}' has registred

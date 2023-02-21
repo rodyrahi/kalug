@@ -78,6 +78,12 @@
                   Rep your style
                 </label>
               </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="Audiance" onchange="aud()" id="c5" name="c4" onclick="" />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Audiance
+                </label>
+              </div>
             </div>
 
             <label for="form-label"> Gender </label>
@@ -111,13 +117,22 @@
     </div>
 
     <script>
+
+
+
+
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+ 
+
 
       checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", () => {
           const checkedCount = document.querySelectorAll(
             'input[type="checkbox"]:checked'
           ).length;
+         
+            
           if (checkedCount > 2) {
             checkbox.checked = false;
            
@@ -134,6 +149,16 @@
 
           }
           
+          if (checkedCount > 1) {
+            if (checkbox.id != 'c5') {
+              checkbox.checked = false;
+            }
+       
+           
+
+          }
+
+
         });
       });
     </script>
