@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var con = require("./database.js")
+var nodemailer = require('nodemailer');
 // const PaytmChecksum = require('./Paytmchecksum.js');
 const request = require('request');
 
@@ -41,14 +42,42 @@ con.query(sql, [values], function (err, result) {
   if (err) throw err;
   console.log("Number of records inserted: " + result.affectedRows);
 });
+res.render('payment')
+})
+
+app.get('/mail', function (req, res) {
+
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'rodyrahi126@gmail.com',
+    pass: 'etqopjtrifhcplkr'
+  }
+});
+
+var mailOptions = {
+  from: 'rodyrahi126@gmail.com',
+  to: 'rajvendrarahi126@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+}); 
+
+  
 
 })
 
-app.get('/register', function (req, res) {
-  res.render('resgister')
-
-})
-
-
+app.get('/payment', function (req, res) {
+  res.render('payment')
+  })
 
 app.listen(3030)
