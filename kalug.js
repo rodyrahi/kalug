@@ -5,6 +5,8 @@ var nodemailer = require('nodemailer');
 // const PaytmChecksum = require('./Paytmchecksum.js');
 const request = require('request');
 
+let number = 0000
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -42,26 +44,20 @@ con.query(sql, [values], function (err, result) {
   if (err) throw err;
   console.log("Number of records inserted: " + result.affectedRows);
 });
-res.render('payment')
-})
-
-app.get('/mail', function (req, res) {
-
-
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'rodyrahi126@gmail.com',
-    pass: 'etqopjtrifhcplkr'
+    user: 'kalyugkakurukshetra@gmail.com',
+    pass: 'iatbmdzbmzwjfbcg'
   }
 });
 
 var mailOptions = {
-  from: 'rodyrahi126@gmail.com',
-  to: 'rajvendrarahi126@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
+  from: 'kalyugkakurukshetra@gmail.com',
+  to: data.mail,
+  subject: 'Hello there' + data.name ,
+  text: 'Thanks for registring in kalyugkakuruksehtra Your id is '+number
 };
 
 transporter.sendMail(mailOptions, function(error, info){
@@ -69,8 +65,17 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log(error);
   } else {
     console.log('Email sent: ' + info.response);
+    number+=1
   }
 }); 
+
+res.render('payment')
+})
+
+app.get('/mail', function (req, res) {
+
+
+
 
   
 
