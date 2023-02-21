@@ -1,137 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>kalyug</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Solitreo&display=swap");
 
-  <title>kalyug</title>
-
-</head>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Solitreo&display=swap');
-
-    body{
-            font-family: 'Nunito', sans-serif;
+    body {
+      font-family: "Nunito", sans-serif;
     }
-</style>
+  </style>
+  <body
+    class="bg-dark"
+    style="
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    ">
+    <div class="container justify-content-center mt-2 border rounded bg-light">
+      <div class="text-center">
+        <img src="logo.png" alt="" width="300rem" />
+        <div>
+          <img src="gymlogo.png" alt="" width="150rem" />
+          <p class="">
+            <span class="badge bg-secondary"> Venue Partner </span>
+          </p>
+        </div>
 
-<body class="bg-dark" style="background-image: url('bg.jpg');    background-repeat: no-repeat;
-background-attachment: fixed;">
-  <div class="container justify-content-center mt-2 border rounded bg-light">
-    <div class="text-center">
-      <img src="logo.png" alt="" width="300rem">
-      <div>
-        <img src="gymlogo.png" alt="" width="150rem">
-        <p class=""> <span class="badge bg-secondary">
-            Venue Partner
-          </span> </p>
-
+        <h5 class="mt-1 text-dark">
+          K.H. No. 29/3/3, Beside Rajora Farm House, Khajuri Kalan Road - 462022
+        </h5>
+        <a
+          href="https://maps.app.goo.gl/2HyNcPAKtTivGbsw8"
+          class="btn btn-primary"
+          role="button">Get Location</a>
       </div>
 
+      <div class="m-3">
+        <div class="text-left m-1 p-4 bg-light rounded">
+          <form action="/"  method="post">
+            <label class="form-label mt-2" for="">Stage Name </label>
+            <input class="form-control" name="name" id="name" type="text" placeholder="Name" required />
 
-      <h5 class="mt-1 text-dark "> K.H. No. 29/3/3, Beside Rajora Farm House, Khajuri Kalan Road - 462022 </h5> <a href="https://maps.app.goo.gl/2HyNcPAKtTivGbsw8" class="btn btn-primary" role="button">Get Location</a>
+            <div class="rounded border p-2 shadow my-3">
+              <label class="form-label" for="">Category </label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value=" Popping" id="c1" name="c4" onclick="" />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Popping
+                </label>
 
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value=" Breaking" id="c2" name="c4" onclick="" />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Breaking
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Krump" id="c3"  name="c4"onclick="" />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Krump
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="Rep your style" id="c4" name="c4" onclick="" />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Rep your style
+                </label>
+              </div>
+            </div>
 
-    </div>
+            <label for="form-label"> Gender </label>
+            <select class="form-select mb-2" id="gender" name="gender" aria-label="Default select example">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
 
-    <div class="m-3">
-      <div class="text-left m-1  p-4 bg-light rounded ">
-        <form action="/payment-link" method="POST">
-        <label class="form-label mt-2" for="">Stage Name </label>
-        <input class="form-control" name="Name" id="Name" type="text" placeholder="Sachin" required>
-        <div class="rounded border p-2 shadow my-2">
-          <label class="form-label " for="">Category </label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="popping" name="popping" onclick="" >
-            <label class="form-check-label" for="flexCheckDefault">
-              Popping
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="c2" onclick="" >
-            <label class="form-check-label" for="flexCheckDefault">
-              Breaking
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="c3" onclick="" >
-            <label class="form-check-label" for="flexCheckDefault">
-              Krump
-            </label>
-          </div>
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" value="" id="c4" onclick="" >
-            <label class="form-check-label" for="flexCheckDefault">
-              Rep your style
-            </label>
-          </div>
+            <label class="form-label m-0" for="">Age </label>
+            <input class="form-control mb-2" name="age" id="age" type="number" placeholder="Age" required />
 
+            <label class="form-label m-0" for="">City </label>
+            <input class="form-control mb-2" name="city" id="city" type="text" placeholder="Bhopal" required />
+
+            <label class="form-label m-0" for="">Contact Number </label>
+            <input class="form-control mb-2" name="number" id="number" type="tel" placeholder="Mobile Number " required/>
+
+            <label class="form-label m-0" for="">Email </label>
+            <input class="form-control mb-2" name="mail" id="mail" type="email" placeholder="Example@gmail.com" required/>
+
+            <div class="bg-dark p-1 rounded">
+              <p class="mt-1 text-danger mb-0 mx-1">
+                No entries without mail conformation and slot number
+              </p>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Pay now</button>
+          </form>
         </div>
-        <label for="form-label"> Gender </label>
-        <select class="form-select" aria-label="Default select example">
-
-          <option value="1">Male</option>
-          <option value="2">Female</option>
-          <option value="3">Others</option>
-        </select>
-
-
-
-
-        <label class="form-label" for="">Age </label>
-        <input class="form-control " name="Gmail" id="Gmail" type="number" placeholder="69" required>
-
-        <label class="form-label" for="">City </label>
-        <input class="form-control " name="Gmail" id="Gmail" type="text" placeholder="Bhopal" required>
-
-        <label class="form-label" for="">Contact Number </label>
-        <input class="form-control " name="Gmail" id="Gmail" type="tel" placeholder="69" required>
-
-
-        <label class="form-label" for="">Email </label>
-        <input class="form-control " name="Gmail" id="Gmail" type="email" placeholder="sachin@gmail.com" required>
-
-
-
-        <div class="bg-dark p-1 rounded">
-          <p class="mt-1 text-danger mb-0 mx-1 "> No entries without mail conformation and slot number </p>
-
-        </div>
-        <button class="btn btn-primary mt-2" type="submit"> Pay now </button>
-
-
-        </form>
-
       </div>
-
     </div>
 
-  </div>
+    <script>
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-  <script>
-
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', () => {
-    const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    if (checkedCount > 2) {
-      checkbox.checked = false;
-    }
-  });
-});
-
-
-  </script>
-
-</body>
-
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          const checkedCount = document.querySelectorAll(
+            'input[type="checkbox"]:checked'
+          ).length;
+          if (checkedCount > 2) {
+            checkbox.checked = false;
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
