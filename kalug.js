@@ -56,8 +56,8 @@ var transporter = nodemailer.createTransport({
 var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
   to: 'rodyrahi126@gmail.com',
-  subject: 'Hello there' + data.name ,
-  text: 'Thanks for registring in kalyugkakuruksehtra Your id is '+number
+  subject: 'Someone registred' ,
+  text: data.name + 'has registred'
 };
 
 transporter.sendMail(mailOptions, function(error, info){
