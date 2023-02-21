@@ -91,7 +91,7 @@
             <input class="form-control mb-2" name="age" id="age" type="number" placeholder="Age" required />
 
             <label class="form-label m-0" for="">City </label>
-            <input class="form-control mb-2" name="city" id="city" type="text" placeholder="Bhopal" required />
+            <input class="form-control mb-2" name="city" id="city" type="text" placeholder="City" required />
 
             <label class="form-label m-0" for="">Contact Number </label>
             <input class="form-control mb-2" name="number" id="number" type="tel" placeholder="Mobile Number " required/>
@@ -104,7 +104,7 @@
                 No entries without mail conformation and slot number
               </p>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Pay now</button>
+            <button type="submit" class="btn btn-primary mt-3 disabled" id="pay">Pay now</button>
           </form>
         </div>
       </div>
@@ -120,7 +120,20 @@
           ).length;
           if (checkedCount > 2) {
             checkbox.checked = false;
+           
+
           }
+          if (checkedCount > 0) {
+            try {
+              document.getElementById("pay").classList.remove("disabled");
+            } catch (error) {
+              
+            }
+            
+           
+
+          }
+          
         });
       });
     </script>
