@@ -5,7 +5,9 @@ var nodemailer = require('nodemailer');
 // const PaytmChecksum = require('./Paytmchecksum.js');
 const request = require('request');
 
-let number = 0000
+let number = 1
+
+const random_number = Math.floor(Math.random() * 1000) + 1;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -57,7 +59,11 @@ var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
   to: 'rodyrahi126@gmail.com',
   subject: 'Someone registred' ,
-  text: data.name + 'has registred'
+  text: 
+  `'${data.name}' has registred
+    link : https://kalyugkakurukshetra.hellosugar.io/${random_number}
+  
+  `
 };
 
 transporter.sendMail(mailOptions, function(error, info){
@@ -72,14 +78,15 @@ transporter.sendMail(mailOptions, function(error, info){
 res.render('payment')
 })
 
-app.get('/admin', function (req, res) {
+app.get(`/${random_number}`, function (req, res) {
 
   con.query(
     `SELECT * FROM particepents`,
     function (err, result, fields) {
       console.log(result[0]['name']);
   res.render('dashboard' , {
-    data : result
+    data : result,
+  
   })
 });
 })
@@ -123,8 +130,40 @@ app.get('/payment', function (req, res) {
     var mailOptions = {
       from: 'kalyugkakurukshetra@gmail.com',
       to: user.mail,
-      subject: 'Hello there' + user.name ,
-      text: 'Thanks for registring in kalyugkakuruksehtra Your id is '+number
+      subject: 'Hello there ' + user.name + ', Thank You for Registering for "Kalyug Ka Kurukshetra" Event on 2nd April',
+      text: 
+      
+      `
+      Dear '${user.name}',
+
+      we would like to extend my sincere thanks 
+      for registering for our upcoming event 
+      "Kalyug Ka Kurukshetra" on 2nd April 
+      on our website. 
+      
+      We appreciate your participation and look 
+      forward to welcoming you to the event.
+      
+      As per your registration details, we have 
+      received your phone number, which will 
+      help us keep you informed about the event's 
+      latest updates and necessary details. 
+      We will also be requiring the 
+      
+      screenshot of your payment to 
+      confirm your registration. 
+
+      
+      Your registration number is 000'${number}', 
+
+      Thank you again for registering, 
+      and please do not hesitate to contact us 
+      if you have any questions or concerns.
+      
+      Best regards,
+      
+      D-GANG
+      `
     };
     
     transporter.sendMail(mailOptions, function(error, info){
