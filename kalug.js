@@ -154,7 +154,7 @@ app.get('/payment', function (req, res) {
       confirm your registration. 
 
       
-      Your registration number is 000'${number}', 
+      Your registration number is --  000${number}, 
 
       Thank you again for registering, 
       and please do not hesitate to contact us 
