@@ -55,7 +55,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
-  to: data.mail,
+  to: 'rodyrahi126@gmail.com',
   subject: 'Hello there' + data.name ,
   text: 'Thanks for registring in kalyugkakuruksehtra Your id is '+number
 };
@@ -72,17 +72,68 @@ transporter.sendMail(mailOptions, function(error, info){
 res.render('payment')
 })
 
-app.get('/mail', function (req, res) {
+app.get('/admin', function (req, res) {
 
-
-
-
-  
-
+  con.query(
+    `SELECT * FROM particepents`,
+    function (err, result, fields) {
+      console.log(result[0]['name']);
+  res.render('dashboard' , {
+    data : result
+  })
+});
 })
+
+app.post('/payed', function (req, res) {
+   let data = req.body
+   console.log(data);
+   con.query(
+    `UPDATE particepents
+    SET payment = 'ok'
+    WHERE name = '${data.name}' AND number = '${data.number}' AND mail ='${data.mail}'`
+    ,
+    function (err, result, ) {
+      if (err) {
+        console.log(err);
+      }
+      else{
+        sendmail(data)
+      }
+});
+   res.redirect('/admin')
+  })
 
 app.get('/payment', function (req, res) {
   res.render('payment')
   })
 
+
+
+
+
+  function sendmail(user) {
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'kalyugkakurukshetra@gmail.com',
+        pass: 'iatbmdzbmzwjfbcg'
+      }
+    });
+    
+    var mailOptions = {
+      from: 'kalyugkakurukshetra@gmail.com',
+      to: user.mail,
+      subject: 'Hello there' + user.name ,
+      text: 'Thanks for registring in kalyugkakuruksehtra Your id is '+number
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+        number+=1
+      }
+    }); 
+  }
 app.listen(3030)
