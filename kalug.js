@@ -111,7 +111,13 @@ app.post('/payed', function (req, res) {
         console.log(err);
       }
       else{
-        sendmail(data)
+        con.query(
+          `SELECT * FROM particepents WHERE number=${data.number}`,
+          function (err, result, fields) {
+            console.log(result[0]['name']);
+    
+        sendmail(data , result[0]['id']  )
+          })
       }
 });
    res.redirect('/' + random_number)
@@ -128,7 +134,7 @@ app.get('/payment', function (req, res) {
 
 
 
-  function sendmail(user) {
+  function sendmail(user , num) {
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -164,7 +170,7 @@ app.get('/payment', function (req, res) {
       confirm your registration. 
 
       
-      Your registration number is --  000${user.id}, 
+      Your registration number is --  000${num}, 
 
       Thank you again for registering, 
       and please do not hesitate to contact us 
@@ -189,7 +195,7 @@ app.get('/payment', function (req, res) {
         console.log('Email sent: ' + info.response);
         var sql =
         `UPDATE particepents
-        SET registrationno = 000${number} 
+        SET registrationno = 000${num} 
         WHERE  number= '${user.number}' AND mail= '${user.mail}'`
 
     
