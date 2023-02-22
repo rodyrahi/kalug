@@ -57,7 +57,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
-  to: 'rodyrahi126@gmail.com , rprishavpal1234@gmail.com  ',
+  to: 'rodyrahi126@gmail.com , rprishavpal1234@gmail.com ',
   subject: 'Someone registred' ,
   text: 
   `'${data.name}' has registred
@@ -107,7 +107,7 @@ app.post('/payed', function (req, res) {
         sendmail(data)
       }
 });
-   res.redirect('/admin')
+   res.redirect('/' + number)
   })
 
 app.get('/payment', function (req, res) {
@@ -165,12 +165,30 @@ app.get('/payment', function (req, res) {
       D-GANG
       `
     };
+
+
+
     
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         console.log(error);
       } else {
+
+
+
         console.log('Email sent: ' + info.response);
+        var sql =
+        `UPDATE particepents
+        SET registrationno = 000${number} 
+        WHERE  number= '${user.number}' AND mail= '${user.mail}'`
+
+    
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Number of records inserted: " + result.affectedRows);
+      });
+
+
         number+=1
       }
     }); 
