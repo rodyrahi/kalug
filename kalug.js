@@ -114,7 +114,7 @@ app.post('/payed', function (req, res) {
         sendmail(data)
       }
 });
-   res.redirect('/' + number)
+   res.redirect('/' + random_number)
   })
 
 app.get('/payment', function (req, res) {
@@ -164,7 +164,7 @@ app.get('/payment', function (req, res) {
       confirm your registration. 
 
       
-      Your registration number is --  000${number}, 
+      Your registration number is --  000${user.id}, 
 
       Thank you again for registering, 
       and please do not hesitate to contact us 
