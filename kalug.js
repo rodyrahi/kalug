@@ -57,7 +57,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'kalyugkakurukshetra@gmail.com',
-  to: 'rodyrahi126@gmail.com , rprishavpal1234@gmail.com ',
+  to: 'rodyrahi126@gmail.com  , rprishavpal1234@gmail.com',
   subject: 'Someone registred' ,
   text: 
   `'${data.name}' has registred
@@ -74,8 +74,15 @@ transporter.sendMail(mailOptions, function(error, info){
     number+=1
   }
 }); 
+console.log(data.category);
+if (data.c4 === 'Audiance') {
+  res.render('paymentaudi')
+}
+else{
+  res.render('paymentpart')
 
-res.render('payment')
+}
+
 })
 
 app.get(`/${random_number}`, function (req, res) {
@@ -111,6 +118,9 @@ app.post('/payed', function (req, res) {
   })
 
 app.get('/payment', function (req, res) {
+
+
+
   res.render('payment')
   })
 
