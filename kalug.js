@@ -84,6 +84,7 @@ else{
 }
 
 })
+console.log(`https://kalyugkakurukshetra.hellosugar.io/${random_number}`);
 
 app.get(`/${random_number}`, function (req, res) {
 
