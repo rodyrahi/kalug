@@ -113,7 +113,7 @@ app.post('/payed', function (req, res) {
       }
       else{
         con.query(
-          `SELECT * FROM particepents WHERE number=${data.number} AND name=${data.name}`,
+          `SELECT * FROM particepents WHERE number=${data.number} AND name='${data.name}'`,
           function (err, result, fields) {
             console.log(result[0]['name']);
     
