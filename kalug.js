@@ -120,7 +120,7 @@ app.post('/payed', function (req, res) {
           function (err, result, fields) {
             console.log(result[0]['name']);
     
-        // sendmail(data , result[0]['id']  )
+         sendmail(data , result[0]['id']  )
           })
       }
 });
