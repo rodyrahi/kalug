@@ -112,12 +112,15 @@ app.post('/payed', function (req, res) {
         console.log(err);
       }
       else{
+        console.log(`UPDATE particepents
+        SET payment = 'ok'
+        WHERE name = '${data.name}' AND number = '${data.number}' AND mail ='${data.mail}'`);
         con.query(
           `SELECT * FROM particepents WHERE number=${data.number} AND name='${data.name}'`,
           function (err, result, fields) {
             console.log(result[0]['name']);
     
-        sendmail(data , result[0]['id']  )
+        // sendmail(data , result[0]['id']  )
           })
       }
 });
