@@ -131,7 +131,7 @@ app.get('/payment', function (req, res) {
 
 
 
-  res.render('payment')
+  res.render('paymentaudi')
   })
 
 
